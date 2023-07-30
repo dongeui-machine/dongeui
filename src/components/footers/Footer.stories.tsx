@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/react";
-import Footer from "./Footer";
-import { CompanyInfoType } from "../types/CompanyInfo";
+import { Footer } from "./Footer";
+import { CompanyInfoType } from "../../types/CompanyInfo";
 
 export default {
     title: 'components/Footer',

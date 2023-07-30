@@ -1,7 +1,7 @@
 import token from '../tokens/tokens.json';
 import { styled } from 'styled-components';
-import callIcon from '../assets/images/callIcon.svg';
-import helpIcon from '../assets/images/helpIcon.svg';
+import callIcon from '../assets/images/icons/callIcon.svg';
+import helpIcon from '../assets/images/icons/helpIcon.svg';
 
 const { PlainRadius, White, Heading2, bodyText, Small, smallText, Gray, DarkGray, LightGray, RegularEverywhereShadow, RegularShadow } = token.global;
 

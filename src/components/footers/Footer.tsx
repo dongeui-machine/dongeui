@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import token from '../tokens/tokens.json';
-import { CompanyInfoType } from '../types/CompanyInfo';
+import token from '../../tokens/tokens.json';
+import { CompanyInfoType } from '../../types/CompanyInfo';
 
 const { LightGray, bodyText, Regular, Black } = token.global;
 
@@ -31,7 +31,7 @@ export const FooterText = styled.span<{ isEnd: boolean }>`
     text-align: center;
 `
 
-const Footer = ({ companyName, ownerName, tel, address } : CompanyInfoType) => {
+export const Footer = ({ companyName, ownerName, tel, address } : CompanyInfoType) => {
     return (
         <FooterContainer>
             <FooterTextLine>
@@ -46,5 +46,3 @@ const Footer = ({ companyName, ownerName, tel, address } : CompanyInfoType) => {
         </FooterContainer>
     );
 };
-
-export default Footer;

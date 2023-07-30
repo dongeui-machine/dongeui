@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeaderContainer, LogoButton, LogoButtonImg } from './Header';
-import smallLogo from '../assets/images/smallLogo.png'
-import hamburgerIcon from '../assets/images/hamburgerIcon.svg'
+import smallLogo from '../../assets/images/smallLogo.png'
+import hamburgerIcon from '../../assets/images/icons/hamburgerIcon.svg'
 import { styled } from 'styled-components';
 import { Hamburger } from './Hamburger';
 
