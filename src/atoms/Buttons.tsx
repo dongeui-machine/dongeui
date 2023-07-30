@@ -2,7 +2,6 @@ import token from '../tokens/tokens.json';
 import { styled } from 'styled-components';
 import callIcon from '../assets/images/callIcon.svg';
 import helpIcon from '../assets/images/helpIcon.svg';
-import { wrap } from 'module';
 
 const { PlainRadius, White, Heading2, bodyText, smallText, Gray, DarkGray, RegularEverywhereShadow, RegularShadow } = token.global;
 
@@ -90,17 +89,17 @@ export type ButtonProps = {
 
 export const Buttons = ({ text } : ButtonProps) => {
     return (
-    <div style={ { display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridAutoRows: '1fr'} }>
+    <div style={ { display: 'grid', gridTemplateColumns: '1fr 1fr', gridAutoRows: '1fr', placeItems: 'center' } }>
         <NavButton>{ text.nav }</NavButton>
         <NavSubButton>{ text.navSub }</NavSubButton>
-        <MainPageButtonContainer>
-            <MainPageButtonIcon src={callIcon}/>
-            { text.mainPage }
-        </MainPageButtonContainer>
         <HelpButton>
             <HelpButtonIcon src={helpIcon}/>
             { text.help }
         </HelpButton>
+        <MainPageButtonContainer>
+            <MainPageButtonIcon src={callIcon}/>
+            { text.mainPage }
+        </MainPageButtonContainer>
     </div>
     );
 }
