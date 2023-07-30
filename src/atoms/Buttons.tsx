@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import callIcon from '../assets/images/callIcon.svg';
 import helpIcon from '../assets/images/helpIcon.svg';
 
-const { PlainRadius, White, Heading2, bodyText, smallText, Gray, DarkGray, RegularEverywhereShadow, RegularShadow } = token.global;
+const { PlainRadius, White, Heading2, bodyText, Small, smallText, Gray, DarkGray, LightGray, RegularEverywhereShadow, RegularShadow } = token.global;
 
 export const NavButton = styled.button`
     border: 0;
@@ -27,6 +27,7 @@ export const NavSubButton = styled.button`
     width: 155px;
     height: 40px;
     background-color: ${White.value};
+    border-bottom: ${Small.value}px solid ${LightGray.value};
     color: ${DarkGray.value};
     font-size: ${smallText.value}px;
     display: flex;

@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import token from '../tokens/tokens.json';
 import { CompanyInfoType } from '../types/CompanyInfo';
 
-const { LightGray, bodyText } = token.global;
+const { LightGray, bodyText, Regular, Black } = token.global;
 
 export const FooterContainer = styled.footer`
     padding: 35px 0px;
@@ -27,7 +27,7 @@ export const FooterTextLine = styled.div`
 export const FooterText = styled.span<{ isEnd: boolean }>`
     padding: 10px 20px;
     font-size: ${bodyText.value}px;
-    border-right: ${props=>props.isEnd?null:'2px solid #000'};
+    border-right: ${props=>props.isEnd?null:`${Regular.value}px solid ${Black.value}`};
     text-align: center;
 `
 
