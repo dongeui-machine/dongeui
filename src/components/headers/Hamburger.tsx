@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { NavSubButton } from '../atoms/Buttons';
-import token from '../tokens/tokens.json';
+import { NavSubButton } from '../../atoms/Buttons';
+import token from '../../tokens/tokens.json';
 
 const { RegularShadow } = token.global;
 

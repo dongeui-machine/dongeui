@@ -1,8 +1,8 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import token from '../tokens/tokens.json';
-import smallLogo from '../assets/images/smallLogo.png'
-import { NavButton } from '../atoms/Buttons';
+import token from '../../tokens/tokens.json';
+import smallLogo from '../../assets/images/smallLogo.png'
+import { NavButton } from '../../atoms/Buttons';
 
 const { bodyText, White, RegularShadow } = token.global;
 
