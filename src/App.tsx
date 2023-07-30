@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-
+import GlobalStyles from './tokens/GlobalStyled';
 function App() {
   return (
     <div className="App">
-      hello
+      <GlobalStyles/>
+      글씨체 적용되었나?
     </div>
   );
 }
