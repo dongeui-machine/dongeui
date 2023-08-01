@@ -4,7 +4,6 @@ import GlobalStyles from './tokens/GlobalStyled';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/headers/Header';
 import MainPage from './pages/MainPage';
-import { Footer } from './components/footers/Footer';
 import { styled } from 'styled-components';
 
 export const ScrollContainer = styled.div`

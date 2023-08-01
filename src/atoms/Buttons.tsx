@@ -7,7 +7,8 @@ const { PlainRadius, White, Heading2, bodyText, Small, smallText, Gray, DarkGray
 
 export const NavButton = styled.button`
     border: 0;
-    width: 200px;
+    width: 15vw;
+    min-width: 80px;
     height: 60px;
     background-color: ${White.value};
     font-size: ${bodyText.value}px;
