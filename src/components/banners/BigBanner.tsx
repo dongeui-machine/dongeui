@@ -6,6 +6,7 @@ import { ImageSlider } from './ImageSlider';
 import mainBannerProduct1 from '../../assets/images/banner/mainBannerProductImg1.png';
 import mainBannerProduct2 from '../../assets/images/banner/mainBannerProductImg2.png';
 import mainBannerProduct3 from '../../assets/images/banner/mainBannerProductImg3.png';
+import { BigBannerProps } from '../../types/BigBannerProps';
 
 export const BigBannerContainer = styled.section<{imgUrl: string}>`
     width: 100%;
@@ -30,17 +31,14 @@ export const BigBannerTextHeading = styled(Heading2Typo)`
 `
 export const BigBannerTextBody = styled(BodyTextTypo)`
     text-align: end;
+    white-space: pre-line;
 `
-export const BigBanner = () => {
+export const BigBanner = ({ title, body } : BigBannerProps) => {
     return (
         <BigBannerContainer imgUrl={mainBannerImage}>
             <BigBannerTextContainer>
-                <BigBannerTextHeading>A/S를 최우선으로 하는 동의앤피 입니다.</BigBannerTextHeading>
-                <BigBannerTextBody>
-저희 회사는 최고 품질의 한약 기계를 전문으로 제조하고 공급합니다.<br/>
-항상 질 높은 제품과 탁월한 서비스를 제공하여, <br/>
-고객의 신뢰와 만족을 얻을 수 있도록 최선을 다하겠습니다.<br/>
-                </BigBannerTextBody>
+                <BigBannerTextHeading>{ title }</BigBannerTextHeading>
+                <BigBannerTextBody>{ body }</BigBannerTextBody>
             </BigBannerTextContainer>
             <ImageSlider 
                 imgUrl1={mainBannerProduct1}
