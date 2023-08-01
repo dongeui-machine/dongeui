@@ -10,7 +10,6 @@ export const SliderContaner = styled.section`
     width: 300px;
     height: max-content;
 `
-
 export const ImageSliderContainer = styled.div`
     width: 311px;
     height: 450px;
@@ -18,7 +17,6 @@ export const ImageSliderContainer = styled.div`
     justify-content: center;
     align-items: center;
 `
-
 export const ImageSliderImg = styled.img`
 `
 
