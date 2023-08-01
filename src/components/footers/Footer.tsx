@@ -25,7 +25,7 @@ export const FooterTextLine = styled.div`
 `
 
 export const FooterText = styled.span<{ isEnd: boolean }>`
-    padding: 10px 20px;
+    padding: 3px 20px;
     font-size: ${bodyText.value}px;
     border-right: ${props=>props.isEnd?null:`${Regular.value}px solid ${Black.value}`};
     text-align: center;

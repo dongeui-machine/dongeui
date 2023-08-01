@@ -19,7 +19,7 @@ export const HeaderContainer = styled.header`
 export const LogoButton = styled.button`
     border: 0;
     background-color: transparent;
-    margin: 22px 35px;
+    margin: 10px 35px;
     display: flex;
     flex-direction: row;
     justify-content: center;

@@ -9,7 +9,7 @@ export const NavButton = styled.button`
     border: 0;
     width: 15vw;
     min-width: 80px;
-    height: 60px;
+    height: 1.5rem;
     background-color: ${White.value};
     font-size: ${bodyText.value}px;
     display: flex;
