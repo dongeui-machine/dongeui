@@ -37,4 +37,3 @@ function App() {
 }
 
 export default App;
-//제발되줘asdf
