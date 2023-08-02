@@ -1,0 +1,13 @@
+name: client
+on:
+  push:
+    branches:
+      - banner
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code.
+        uses: actions/checkout@v2
+      - name: Action Test
+        run: npm run start

@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import token from '../../tokens/tokens.json';
 import { CompanyInfoType } from '../../types/CompanyInfo';
 
-const { LightGray, bodyText, Regular, Black } = token.global;
+const { LightGray, smallText, Regular, Black } = token.global;
 
 export const FooterContainer = styled.footer`
     padding: 35px 0px;
@@ -14,7 +14,6 @@ export const FooterContainer = styled.footer`
     align-items: center;
     background-color: ${LightGray.value};
 `
-
 export const FooterTextLine = styled.div`
     width: 100%;
     display: flex;
@@ -23,10 +22,9 @@ export const FooterTextLine = styled.div`
     justify-content: center;
     align-items: center;
 `
-
 export const FooterText = styled.span<{ isEnd: boolean }>`
     padding: 3px 20px;
-    font-size: ${bodyText.value}px;
+    font-size: ${smallText.value}px;
     border-right: ${props=>props.isEnd?null:`${Regular.value}px solid ${Black.value}`};
     text-align: center;
 `

@@ -23,7 +23,7 @@ export const HamburgerButtonImg = styled.img`
 export const HeaderMobile = () => {
     return (
         <HeaderContainerMobile>
-            <LogoButton>
+            <LogoButton to='/'>
                 <LogoButtonImg src={smallLogo}/>
                 동의앤피
             </LogoButton>

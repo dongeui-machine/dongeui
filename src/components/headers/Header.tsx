@@ -3,8 +3,9 @@ import { styled } from 'styled-components';
 import token from '../../tokens/tokens.json';
 import smallLogo from '../../assets/images/smallLogo.png'
 import { NavButton } from '../../atoms/Buttons';
+import { Link } from 'react-router-dom';
 
-const { bodyText, White, RegularShadow } = token.global;
+const { bodyText, White, Black, RegularShadow } = token.global;
 
 export const HeaderContainer = styled.header`
     position: sticky;
@@ -16,7 +17,10 @@ export const HeaderContainer = styled.header`
     background-color: ${White.value};
     box-shadow: ${RegularShadow.value.x}px ${RegularShadow.value.y}px ${RegularShadow.value.blur}px ${RegularShadow.value.spread}px ${RegularShadow.value.color};
 `
-export const LogoButton = styled.button`
+export const LogoButton = styled(Link)`
+    text-decoration-line : none;
+    text-decoration : none;
+    color: ${Black.value};
     border: 0;
     background-color: transparent;
     margin: 10px 35px;
@@ -42,17 +46,19 @@ export const LogoNavButtonContainer = styled.div`
 `
 
 export const Header = () => {
+    
+
     return (
         <HeaderContainer>
-            <LogoButton>
+            <LogoButton to='/'>
                 <LogoButtonImg src={smallLogo}/>
                 동의앤피
             </LogoButton>
             <LogoNavButtonContainer>
-                <NavButton>회사소개</NavButton>
-                <NavButton>동의메디칼</NavButton>
-                <NavButton>동의기계</NavButton>
-                <NavButton>동의앤피용달</NavButton>
+                <NavButton to='/intro'>회사소개</NavButton>
+                <NavButton to='/medical'>동의메디칼</NavButton>
+                <NavButton to='/machine'>동의기계</NavButton>
+                <NavButton to='/truck'>동의앤피용달</NavButton>
             </LogoNavButtonContainer>
         </HeaderContainer>
     );

@@ -2,14 +2,18 @@ import token from '../tokens/tokens.json';
 import { styled } from 'styled-components';
 import callIcon from '../assets/images/icons/callIcon.svg';
 import helpIcon from '../assets/images/icons/helpIcon.svg';
+import { Link } from 'react-router-dom';
 
-const { PlainRadius, White, Heading2, bodyText, Small, smallText, Gray, DarkGray, LightGray, RegularEverywhereShadow, RegularShadow } = token.global;
+const { PlainRadius, White, Black,  Heading2, bodyText, Small, smallText, Gray, DarkGray, LightGray, RegularEverywhereShadow, RegularShadow } = token.global;
 
-export const NavButton = styled.button`
+export const NavButton = styled(Link)`
+    text-decoration-line : none;
+    text-decoration : none;
+    color: ${Black.value};
     border: 0;
     width: 15vw;
     min-width: 80px;
-    height: 1.5rem;
+    height: 60px;
     background-color: ${White.value};
     font-size: ${bodyText.value}px;
     display: flex;
@@ -92,7 +96,7 @@ export type ButtonProps = {
 export const Buttons = ({ text } : ButtonProps) => {
     return (
     <div style={ { display: 'grid', gridTemplateColumns: '1fr 1fr', gridAutoRows: '1fr', placeItems: 'center' } }>
-        <NavButton>{ text.nav }</NavButton>
+        <NavButton to='/'>{ text.nav }</NavButton>
         <NavSubButton>{ text.navSub }</NavSubButton>
         <HelpButton>
             <HelpButtonIcon src={helpIcon}/>
