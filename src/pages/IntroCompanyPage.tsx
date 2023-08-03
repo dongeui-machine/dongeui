@@ -3,6 +3,7 @@ import { MainPageContainer } from './MainPage';
 import { styled } from 'styled-components';
 import { SmallBanner } from '../components/banners/SmallBanner';
 import { Footer } from '../components/footers/Footer';
+import smallBanner_introduce from '../assets/images/banner/smallBanner_introduce.png'
 
 export const IntroCompanyPageContainer = styled(MainPageContainer)`
     width: 100vw;
@@ -10,7 +11,7 @@ export const IntroCompanyPageContainer = styled(MainPageContainer)`
 export const IntroCompanyPage = () => {
     return (
         <IntroCompanyPageContainer>
-            <SmallBanner title='회사소개'/>
+            <SmallBanner title='회사소개' imgUrl={`${smallBanner_introduce}`}/>
             <Footer 
                 companyName='(주) 동의메디칼, 동의기계'
                 ownerName='최정호'
@@ -23,7 +24,7 @@ export const IntroCompanyPage = () => {
 export const IntroCompanyRoadPage = () => {
     return (
         <IntroCompanyPageContainer>
-            <SmallBanner title='회사소개'/>
+            <SmallBanner title='회사소개' imgUrl={`${smallBanner_introduce}`}/>
             <Footer 
                 companyName='(주) 동의메디칼, 동의기계'
                 ownerName='최정호'
