@@ -1,41 +1,24 @@
 import React from 'react';
-import { keyframes, styled } from 'styled-components';
+import { styled } from 'styled-components';
 import { NavSubButton } from '../../atoms/Buttons';
 import token from '../../tokens/tokens.json';
+import { HamburgerProps } from '../../types/HamburgerProps'; 
 
 const { RegularShadow } = token.global;
 
-const fadeIn = keyframes`
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-`;
-
-const fadeOut = keyframes`
-    0% {
-        opacity: 100%;
-    }
-    100% {
-        opacity: 0%;
-    }
-`;
-
-export const HamburgerContainer = styled.section`
+export const HamburgerContainer = styled.section<{isHamburgerClick:boolean}>`
     position: absolute;
     top: 75px;
     right: 15px;
-    display: flex;
+    z-index: 100;
+    display: ${(props)=>props.isHamburgerClick?'block':'none'};
     flex-direction: column;
     width: fit-content;
     box-shadow: ${RegularShadow.value.x}px ${RegularShadow.value.y}px ${RegularShadow.value.blur}px ${RegularShadow.value.spread}px ${RegularShadow.value.color};
 `
-
-export const Hamburger = () => {
+export const Hamburger = ({isHamburgerClick}:HamburgerProps) => {
     return (
-        <HamburgerContainer>
+        <HamburgerContainer isHamburgerClick={isHamburgerClick}>
             <NavSubButton>회사소개</NavSubButton>
             <NavSubButton>동의메디칼</NavSubButton>
             <NavSubButton>동의기계</NavSubButton>

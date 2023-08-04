@@ -14,7 +14,7 @@ const Template = () => {
     <>
         <button onClick={ () => { setIsVisible(!isVisible) } }>햄버거 띄우는 버튼</button>
         {
-            isVisible?<Hamburger/>:null
+            isVisible?<Hamburger isHamburgerClick={isVisible}/>:null
         }
     </>);
 }
