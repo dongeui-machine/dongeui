@@ -19,10 +19,10 @@ export const HamburgerContainer = styled.section<{isHamburgerClick:boolean}>`
 export const Hamburger = ({isHamburgerClick}:HamburgerProps) => {
     return (
         <HamburgerContainer isHamburgerClick={isHamburgerClick}>
-            <NavSubButton>회사소개</NavSubButton>
-            <NavSubButton>동의메디칼</NavSubButton>
-            <NavSubButton>동의기계</NavSubButton>
-            <NavSubButton>동의앤피용달</NavSubButton>
+            <NavSubButton to='/intro'>회사소개</NavSubButton>
+            <NavSubButton to='/road'>오시는길</NavSubButton>
+            <NavSubButton to='/products'>제품소개</NavSubButton>
+            <NavSubButton to='/truck'>동의앤피용달</NavSubButton>
         </HamburgerContainer>
     );
 };

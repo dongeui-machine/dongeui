@@ -23,7 +23,6 @@ export const HamburgerButton = styled.button<{imgUrl:string}>`
     cursor: pointer;
 `
 
-
 export const HeaderMobile = () => {
     const [isHamburgerClick, setIsHamburgerClick] = useState<boolean>(false);
     
@@ -34,7 +33,7 @@ export const HeaderMobile = () => {
         <HeaderContainerMobile>
             <LogoButton to='/'>
                 <LogoButtonImg src={smallLogo}/>
-                동의앤피
+                동의기계
             </LogoButton>
             <HamburgerButton imgUrl={hamburgerIcon} onClick={hamburgerClickListener}>
                 <Hamburger isHamburgerClick={isHamburgerClick}/>

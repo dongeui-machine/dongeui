@@ -52,12 +52,12 @@ export const Header = () => {
         <HeaderContainer>
             <LogoButton to='/'>
                 <LogoButtonImg src={smallLogo}/>
-                동의앤피
+                동의기계
             </LogoButton>
             <LogoNavButtonContainer>
                 <NavButton to='/intro'>회사소개</NavButton>
-                <NavButton to='/medical'>동의메디칼</NavButton>
-                <NavButton to='/machine'>동의기계</NavButton>
+                <NavButton to='/road'>오시는길</NavButton>
+                <NavButton to='/products'>제품소개</NavButton>
                 <NavButton to='/truck'>동의앤피용달</NavButton>
             </LogoNavButtonContainer>
         </HeaderContainer>

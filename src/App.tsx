@@ -5,10 +5,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/headers/Header';
 import MainPage from './pages/MainPage';
 import { styled } from 'styled-components';
-import IntroCompanyPage, { IntroCompanyRoadPage } from './pages/IntroCompanyPage';
-import DongeuiMedicalPage from './pages/DongeuiMedicalPage';
-import DongeuiMachinePage from './pages/DongeuiMachinePage';
+import IntroCompanyPage from './pages/IntroCompanyPage';
+import ProductPage from './pages/ProductPage';
 import DongeuiEndPPage from './pages/DongeuiEndPPage';
+import RoadPage from './pages/RoadPage';
 
 export const ScrollContainer = styled.div`
     width: 100vw;
@@ -25,9 +25,8 @@ function App() {
           <Routes>
             <Route path='/' element={<MainPage/>}/>
             <Route path='/intro' element={<IntroCompanyPage/>}/>
-            <Route path='/intro/road' element={<IntroCompanyRoadPage/>}/>
-            <Route path='/medical' element={<DongeuiMedicalPage/>}/>
-            <Route path='/machine' element={<DongeuiMachinePage/>}/>
+            <Route path='/road' element={<RoadPage/>}/>
+            <Route path='/products' element={<ProductPage/>}/>
             <Route path='/truck' element={<DongeuiEndPPage/>}/>
           </Routes>
         </ScrollContainer>

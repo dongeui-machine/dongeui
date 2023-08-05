@@ -1,10 +1,12 @@
 import { Meta } from "@storybook/react";
 import { Hamburger } from "./Hamburger";
 import { useState } from "react";
+import { MemoryRouter } from "react-router-dom";
 
 export default {
     title: 'components/Hamburger',
     component: Hamburger,
+    decorators: [(Story) => <MemoryRouter><Story/></MemoryRouter>]
 } as Meta
 
 const Template = () => {

@@ -27,7 +27,9 @@ export const NavButton = styled(Link)`
     }
 `
 
-export const NavSubButton = styled.button`
+export const NavSubButton = styled(Link)`
+    text-decoration-line : none;
+    text-decoration : none;
     border: 0;
     width: 155px;
     height: 40px;
@@ -97,7 +99,7 @@ export const Buttons = ({ text } : ButtonProps) => {
     return (
     <div style={ { display: 'grid', gridTemplateColumns: '1fr 1fr', gridAutoRows: '1fr', placeItems: 'center' } }>
         <NavButton to='/'>{ text.nav }</NavButton>
-        <NavSubButton>{ text.navSub }</NavSubButton>
+        <NavSubButton to='/'>{ text.navSub }</NavSubButton>
         <HelpButton>
             <HelpButtonIcon src={helpIcon}/>
             { text.help }
