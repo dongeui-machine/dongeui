@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import GlobalStyles from './tokens/GlobalStyled';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -9,6 +9,8 @@ import IntroCompanyPage from './pages/IntroCompanyPage';
 import ProductPage from './pages/ProductPage';
 import DongeuiEndPPage from './pages/DongeuiEndPPage';
 import RoadPage from './pages/RoadPage';
+import { useDispatch } from 'react-redux';
+import { readBrowserWidth } from './redux/actions/browserWidthAction';
 
 export const ScrollContainer = styled.div`
     width: 100vw;
@@ -16,6 +18,19 @@ export const ScrollContainer = styled.div`
     overflow-y: auto;
 `
 function App() {
+  const dispatch = useDispatch();
+
+  const handleResize = () => {
+    dispatch(readBrowserWidth());
+  }
+
+  useEffect(()=>{
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener('resize',handleResize);
+    }
+  },[]);
+
   return (
     <div className="App">
       <GlobalStyles/>
