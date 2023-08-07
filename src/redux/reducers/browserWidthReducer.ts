@@ -1,4 +1,5 @@
-import { READ_BROWSER_WIDTH, ReadBrowserWidthAction } from "../actions/browserWidthAction"
+import { READ_BROWSER_WIDTH } from "../actions/browserWidthAction"
+import { ReadBrowserWidthAction } from "../../types/ActionReturn";
 import { browserWidthInitialState } from "./initialState"
 
 export const browserWidthReducer = (state=browserWidthInitialState, action: ReadBrowserWidthAction) => {

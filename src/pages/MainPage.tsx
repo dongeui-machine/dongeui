@@ -2,8 +2,6 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { BigBanner } from '../components/banners/BigBanner';
 import { Footer } from '../components/footers/Footer';
-import { RootState } from '../redux/reducers';
-import { useSelector } from 'react-redux';
 
 export const MainPageContainer = styled.div`
     width: 100vw;

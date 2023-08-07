@@ -8,8 +8,8 @@ const { RegularShadow } = token.global;
 
 export const HamburgerContainer = styled.section<{isHamburgerClick:boolean}>`
     position: absolute;
-    top: 75px;
-    right: 15px;
+    top: 65px;
+    right: 30px;
     z-index: 100;
     display: ${(props)=>props.isHamburgerClick?'block':'none'};
     flex-direction: column;

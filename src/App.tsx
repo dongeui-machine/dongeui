@@ -12,7 +12,7 @@ import RoadPage from './pages/RoadPage';
 import { useDispatch } from 'react-redux';
 import { readBrowserWidth } from './redux/actions/browserWidthAction';
 import { useSelector } from 'react-redux';
-import { RootState } from './redux/reducers';
+import { RootState } from './types/ReducerReturn';
 import { HeaderMobile } from './components/headers/HeaderMobile';
 
 export const ScrollContainer = styled.div`
