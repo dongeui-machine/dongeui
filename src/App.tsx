@@ -11,6 +11,9 @@ import DongeuiEndPPage from './pages/DongeuiEndPPage';
 import RoadPage from './pages/RoadPage';
 import { useDispatch } from 'react-redux';
 import { readBrowserWidth } from './redux/actions/browserWidthAction';
+import { useSelector } from 'react-redux';
+import { RootState } from './redux/reducers';
+import { HeaderMobile } from './components/headers/HeaderMobile';
 
 export const ScrollContainer = styled.div`
     width: 100vw;
@@ -19,6 +22,7 @@ export const ScrollContainer = styled.div`
 `
 function App() {
   const dispatch = useDispatch();
+  const deviceWidth = useSelector((state:RootState)=>state.browserWidthReducer.width);
 
   const handleResize = () => {
     dispatch(readBrowserWidth());
@@ -35,7 +39,7 @@ function App() {
     <div className="App">
       <GlobalStyles/>
       <Router>
-        <Header/>
+        { deviceWidth>800? <Header/>:<HeaderMobile/>}
         <ScrollContainer>
           <Routes>
             <Route path='/' element={<MainPage/>}/>

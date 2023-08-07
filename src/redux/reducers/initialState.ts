@@ -4,5 +4,5 @@ export type BrowserWidthState = {
 }
 
 export const browserWidthInitialState = {
-    width: 1440,
+    width: window.innerWidth,
 };
