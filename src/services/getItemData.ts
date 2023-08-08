@@ -7,7 +7,7 @@ export const itemData = {
         },
         {
             id: 2, 
-            name: '한약액(검정)(피이티25/씨피피80) 기본수량 6000매 제조원 : 보성지앤피',
+            name: '한약액(검정)(피이티25/씨피피80) 기본수량 6000매',
             imageUrl: 'https://cdn-pro-web-219-28.cdn-nhncommerce.com/nahyo3_godomall_com/data/goods/23/01/04/1093/1093_main_011.jpg'
         },
         {
