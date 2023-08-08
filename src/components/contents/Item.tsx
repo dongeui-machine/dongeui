@@ -26,16 +26,20 @@ export const ItemImg = styled.img<ItemImgProps>`
     border: 2px solid rgba(0,0,0,0.1);
 `
 export const ItemNameTypo = styled(BodyTextTypo)<ItemNameTypoProps>`
-    font-size: ${(props)=>props.browserWidth>800?`${smallText.value}px`:`${bodyText.value}px`};
+    font-size: ${(props)=>props.browserWidth>800?`${bodyText.value}px`:`${smallText.value}px`};
 `
 
 export const Item = ({id, name, imageUrl}:ItemProps) => {
     const deviceWidth = useSelector((state:RootState)=>state.browserWidthReducer.width);
 
+    const itemClickHandler = (e:React.MouseEvent<HTMLElement>) => {
+
+    }
+
     return (
-        <ItemContainer browserWidth={deviceWidth}>
+        <ItemContainer browserWidth={deviceWidth} onClick={itemClickHandler}>
             <ItemImg browserWidth={deviceWidth} alt='제품이미지' src={imageUrl}/>
-            <BodyTextTypo>{name}</BodyTextTypo>
+            <ItemNameTypo browserWidth={deviceWidth}>{name}</ItemNameTypo>
         </ItemContainer>
     );
 };
