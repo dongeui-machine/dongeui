@@ -2,11 +2,17 @@ import { Meta, Story } from "@storybook/react";
 import { MemoryRouter } from "react-router-dom";
 import { Item } from "./Item";
 import { ItemProps } from "../../types/ItemProps";
+import { Provider } from "react-redux";
+import { createStore } from 'redux';
+import rootReducer from "../../redux/reducers";
+
+const store = createStore(rootReducer);
 
 export default {
     title: 'components/Item',
     component: Item,
-    decorators: [(Story) => <MemoryRouter><Story/></MemoryRouter>]
+    decorators: [
+        (Story) => <Provider store={store}><MemoryRouter><Story/></MemoryRouter></Provider>]
 }as Meta
 
 const Template: Story<ItemProps> = (args) => <Item {...args}/>
