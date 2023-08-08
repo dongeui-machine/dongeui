@@ -9,9 +9,9 @@ import token from '../../tokens/tokens.json'
 const { smallText, bodyText } = token.global;
 
 export const ItemContainer = styled.section<ItemContainerProps>`
-    margin: 0px 8px;
-    width: ${(props)=>props.browserWidth>800?'250px':'200px'};
-    height: ${(props)=>props.browserWidth>800?'300px':'250px'};
+    margin: 0px ${(props)=>props.browserWidth>600?'8px':'2px'};
+    width: ${(props)=>props.browserWidth>600?'250px':'180px'};
+    height: ${(props)=>props.browserWidth>600?'300px':'230px'};
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -19,8 +19,8 @@ export const ItemContainer = styled.section<ItemContainerProps>`
     cursor: pointer;
 `
 export const ItemImg = styled.img<ItemImgProps>`
-    width: ${(props)=>props.browserWidth>800?'220px':'150px'};
-    height: ${(props)=>props.browserWidth>800?'220px':'150px'};
+    width: ${(props)=>props.browserWidth>600?'220px':'130px'};
+    height: ${(props)=>props.browserWidth>600?'220px':'130px'};
     object-fit:contain;
     border-radius: 8px;
     border: 2px solid rgba(0,0,0,0.1);

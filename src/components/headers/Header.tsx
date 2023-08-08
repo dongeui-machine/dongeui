@@ -33,7 +33,7 @@ export const LogoButton = styled(Link)`
     cursor: pointer;
 `
 export const LogoButtonImg = styled.img`
-    height: 56px;
+    height: 45px;
     margin-right: 10px;
 `
 export const LogoNavButtonContainer = styled.div`
