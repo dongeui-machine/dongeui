@@ -7,29 +7,28 @@ import { itemData } from '../services/getItemData';
 import { Item } from '../components/contents/Item';
 
 export const MainPageContainer = styled.div`
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 `
-export const SmallTitle = styled(Heading3Typo)`
-    text-align: start;
-    margin: 12px 0px 12px 40px;
-    width: 100%;
-`
 export const ProductSection = styled.section`
     width: 100%;
-    max-width: 800px;
+    margin: 12px 40px 40px 40px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+export const SmallTitle = styled(Heading3Typo)`
+    text-align: start;
+    width: 80vw;
+    margin: 12px 0px 12px 40px;
 `
 export const ItemsContainer = styled.section`
-    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: start;
-    align-items: start;
 `
 export const MainPage = () => {
     const title: string = 'A/S를 최우선으로 하는 동의앤피 입니다.';

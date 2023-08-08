@@ -4,7 +4,7 @@ import { styled } from 'styled-components';
 import { BodyTextTypo } from '../../atoms/Typography';
 
 export const ItemContainer = styled.section`
-    margin: 8px;
+    margin: 0px 8px;
     width: 250px;
     height: 350px;
     display: flex;
@@ -15,13 +15,16 @@ export const ItemContainer = styled.section`
 `
 export const ItemImg = styled.img`
     width: 230px;
-    height: 260px;
+    height: 230px;
+    object-fit:contain;
+    border-radius: 8px;
+    border: 2px solid rgba(0,0,0,0.1);
 `
 
 export const Item = ({id, name, imageUrl}:ItemProps) => {
     return (
         <ItemContainer>
-            <ItemImg src={imageUrl}/>
+            <ItemImg alt='제품이미지' src={imageUrl}/>
             <BodyTextTypo>{name}</BodyTextTypo>
         </ItemContainer>
     );
