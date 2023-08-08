@@ -2,9 +2,34 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { BigBanner } from '../components/banners/BigBanner';
 import { Footer } from '../components/footers/Footer';
+import { Heading3Typo } from '../atoms/Typography';
+import { itemData } from '../services/getItemData';
+import { Item } from '../components/contents/Item';
 
 export const MainPageContainer = styled.div`
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+export const SmallTitle = styled(Heading3Typo)`
+    text-align: start;
+    margin: 12px 0px 12px 40px;
+    width: 100%;
+`
+export const ProductSection = styled.section`
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+`
+export const ItemsContainer = styled.section`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
 `
 export const MainPage = () => {
     const title: string = 'A/S를 최우선으로 하는 동의앤피 입니다.';
@@ -13,6 +38,14 @@ export const MainPage = () => {
     return (
         <MainPageContainer>
             <BigBanner title={title} body={body}/>
+            <ProductSection>
+                <SmallTitle>제품소개</SmallTitle>
+                <ItemsContainer>
+                {
+                    itemData.data.map((e)=><Item id={e.id} name={e.name} imageUrl={e.imageUrl}/>)
+                }
+                </ItemsContainer>
+            </ProductSection>
             <Footer 
                 companyName='(주) 동의메디칼, 동의기계'
                 ownerName='최정호'
