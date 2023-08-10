@@ -11,10 +11,12 @@ export const HamburgerContainer = styled.section<{isHamburgerClick:boolean}>`
     top: 65px;
     right: 30px;
     z-index: 100;
-    display: ${(props)=>props.isHamburgerClick?'block':'none'};
+    opacity: ${(props)=>props.isHamburgerClick?'1':'0'};
+    visibility: ${(props)=>props.isHamburgerClick?'visible':'hidden'};
     flex-direction: column;
     width: fit-content;
     box-shadow: ${RegularShadow.value.x}px ${RegularShadow.value.y}px ${RegularShadow.value.blur}px ${RegularShadow.value.spread}px ${RegularShadow.value.color};
+    transition: 300ms;
 `
 export const Hamburger = ({isHamburgerClick}:HamburgerProps) => {
     return (
