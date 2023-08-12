@@ -90,6 +90,12 @@ export const HelpButtonIcon = styled.img`
     margin-right: 20px;
     width: 50px;
 `
+export const CommonTextButton = styled(Link)`
+    text-decoration-line : none;
+    text-decoration : none;
+    color: ${Black.value};
+    cursor: pointer;
+`
 
 export type ButtonProps = {
     text: { nav:string, navSub: string, mainPage: string, help: string };
