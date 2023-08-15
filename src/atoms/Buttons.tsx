@@ -21,12 +21,15 @@ export const NavButton = styled(Link)`
     justify-content: center;
     align-items: center;
     cursor: pointer;
-
+    transition: 300ms;
     &:hover {
         color: ${Gray.value};
     }
+    &:active {
+        color: ${LightGray.value};
+        transition: 0s;
+    }
 `
-
 export const NavSubButton = styled(Link)`
     text-decoration-line : none;
     text-decoration : none;
@@ -42,11 +45,16 @@ export const NavSubButton = styled(Link)`
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: 300ms;
     &:hover {
-        color: ${Gray.value};
+        background-color: ${LightGray.value};
+    }
+    &:active {
+        background-color: ${Gray.value};
+        color: ${White.value};
+        transition: 0s;
     }
 `
-
 export const MainPageButtonContainer = styled.button`
     width: 630px;
     height: 224px;
@@ -66,11 +74,9 @@ export const MainPageButtonContainer = styled.button`
     cursor: pointer;
     font-size: ${Heading2.value}px;
 `
-
 export const MainPageButtonIcon = styled.img`
     margin-right: 20px;
 `
-
 export const HelpButton = styled.button`
     width: 388px;
     height: 87px;
@@ -85,7 +91,6 @@ export const HelpButton = styled.button`
     box-shadow: ${RegularShadow.value.x}px ${RegularShadow.value.y}px  ${RegularShadow.value.blur}px ${RegularShadow.value.spread}px ${RegularShadow.value.color};
     cursor: pointer;
 `
-
 export const HelpButtonIcon = styled.img`
     margin-right: 20px;
     width: 50px;
@@ -95,8 +100,11 @@ export const CommonTextButton = styled(Link)`
     text-decoration : none;
     color: ${Black.value};
     cursor: pointer;
+    transition: 300ms;
+    &:hover {
+        color: ${Gray.value};
+    }
 `
-
 export type ButtonProps = {
     text: { nav:string, navSub: string, mainPage: string, help: string };
 }
@@ -114,6 +122,7 @@ export const Buttons = ({ text } : ButtonProps) => {
             <MainPageButtonIcon src={callIcon}/>
             { text.mainPage }
         </MainPageButtonContainer>
+        <CommonTextButton to='/'>Button</CommonTextButton>
     </div>
     );
 }

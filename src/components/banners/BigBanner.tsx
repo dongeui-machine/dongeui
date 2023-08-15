@@ -18,6 +18,7 @@ export const BigBannerContainer = styled.section<{imgUrl: string}>`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    z-index: -2;
 `
 export const BigBannerTextContainer = styled.section`
     margin-right: 30px;

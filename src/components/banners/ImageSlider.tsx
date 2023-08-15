@@ -9,6 +9,7 @@ export const SliderContaner = styled.section`
     margin-top: 20px;
     width: 300px;
     height: max-content;
+    z-index: -1;
 `
 export const ImageSliderContainer = styled.div`
     width: 311px;
