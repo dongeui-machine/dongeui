@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { styled } from 'styled-components';
 import mainBannerImage from '../../assets/images/banner/mainBannerImage.png';
 import { BodyTextTypo, Heading2Typo } from '../../atoms/Typography';
@@ -7,6 +7,8 @@ import mainBannerProduct1 from '../../assets/images/banner/mainBannerProductImg1
 import mainBannerProduct2 from '../../assets/images/banner/mainBannerProductImg2.png';
 import mainBannerProduct3 from '../../assets/images/banner/mainBannerProductImg3.png';
 import { BigBannerProps } from '../../types/BigBannerProps';
+import { useDispatch } from 'react-redux';
+import { setIsHamburgerClick } from '../../redux/actions/isHamburgerClickAction';
 
 export const BigBannerContainer = styled.section<{imgUrl: string}>`
     width: 100%;

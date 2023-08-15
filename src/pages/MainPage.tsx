@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { styled } from 'styled-components';
 import { BigBanner } from '../components/banners/BigBanner';
 import { Footer } from '../components/footers/Footer';
@@ -6,6 +6,8 @@ import { Heading3Typo } from '../atoms/Typography';
 import { itemData } from '../services/getItemData';
 import { Item } from '../components/contents/Item';
 import { CommonTextButton } from '../atoms/Buttons';
+import { useDispatch } from 'react-redux';
+import { setIsHamburgerClick } from '../redux/actions/isHamburgerClickAction';
 
 export const MainPageContainer = styled.div`
     width: 100%;
@@ -32,6 +34,12 @@ export const ItemsContainer = styled.section`
     flex-wrap: wrap;
 `
 export const MainPage = () => {
+    const dispatch = useDispatch();
+
+    useMemo(()=>{
+        dispatch(setIsHamburgerClick(false))
+    },[])
+
     const title: string = 'A/S를 최우선으로 하는 동의기계 입니다.';
     const body: string = '저희 회사는 최고 품질의 한약 기계를 판매합니다. \n 항상 질 높은 제품과 탁월한 서비스를 제공하여, \n 고객의 신뢰와 만족을 얻을 수 있도록 최선을 다하겠습니다.';
 

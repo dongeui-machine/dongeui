@@ -42,7 +42,7 @@ export const LogoNavButtonContainer = styled.div`
     flex-grow: 1;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 `
 
 export const Header = () => {

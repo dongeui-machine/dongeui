@@ -39,7 +39,7 @@ function App() {
     <div className="App">
       <GlobalStyles/>
       <Router>
-        { deviceWidth>800? <Header/>:<HeaderMobile/>}
+        { deviceWidth>850? <Header/>:<HeaderMobile/>}
         <ScrollContainer>
           <Routes>
             <Route path='/' element={<MainPage/>}/>

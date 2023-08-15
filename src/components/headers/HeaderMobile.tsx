@@ -4,6 +4,10 @@ import smallLogo from '../../assets/images/smallLogo.png'
 import hamburgerIcon from '../../assets/images/icons/hamburgerIcon.svg'
 import { styled } from 'styled-components';
 import { Hamburger } from './Hamburger';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../types/ReducerReturn';
+import { useDispatch } from 'react-redux';
+import { setIsHamburgerClick } from '../../redux/actions/isHamburgerClickAction';
 
 export const HeaderContainerMobile = styled(HeaderContainer)`
     display: flex;
@@ -24,11 +28,13 @@ export const HamburgerButton = styled.button<{imgUrl:string}>`
 `
 
 export const HeaderMobile = () => {
-    const [isHamburgerClick, setIsHamburgerClick] = useState<boolean>(false);
-    
+    const isHamburgerClick = useSelector((state:RootState)=>state.isHamburgerClickReducer)
+    const dispatch = useDispatch();
+
     const hamburgerClickListener = () => {
-        setIsHamburgerClick(!isHamburgerClick);
+        dispatch(setIsHamburgerClick(!isHamburgerClick));
     }
+
     return (
         <HeaderContainerMobile>
             <LogoButton to='/'>

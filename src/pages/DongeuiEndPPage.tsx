@@ -1,4 +1,3 @@
-import React from 'react';
 import { styled } from 'styled-components';
 import { MainPageContainer } from './MainPage';
 import { SmallBanner } from '../components/banners/SmallBanner';
@@ -6,7 +5,6 @@ import smallBanner_truck from '../assets/images/banner/smallBanner_truck.png'
 import { Footer } from '../components/footers/Footer';
 
 export const DongeuiEndPPageContainer = styled(MainPageContainer)`
-
 `
 
 const DongeuiEndPPage = () => {
