@@ -9,6 +9,7 @@ const globalTokens = tokens.global;
 
 export const CustomAside = styled.aside`
     width: fit-content;
+    max-width: 25vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +19,7 @@ export const SideBarHeading = styled(Heading3Typo)`
     width: 100%;
     text-align: center;
     padding: 10px;
-    color: ${globalTokens.DarkGray.value}
+    color: ${globalTokens.DarkGray.value};
 `
 export const SideBarLine = styled(RegularLineDesign)`
     max-width: 250px;

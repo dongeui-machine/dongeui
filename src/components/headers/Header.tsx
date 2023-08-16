@@ -14,6 +14,7 @@ export const HeaderContainer = styled.header`
     width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: center;
     background-color: ${White.value};
     box-shadow: ${RegularShadow.value.x}px ${RegularShadow.value.y}px ${RegularShadow.value.blur}px ${RegularShadow.value.spread}px ${RegularShadow.value.color};
 `

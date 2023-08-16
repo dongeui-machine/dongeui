@@ -15,17 +15,18 @@ export const IntroCompanyPageContainer = styled(MainPageContainer)`
     width: 100vw;
 `
 export const IntroCompanyPageMainContainer = styled.main`
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: start;
 `
 export const IntroCompanyPage = () => {
     const browserWidth = useSelector((state:RootState)=>state.browserWidthReducer.width);
     const dispatch = useDispatch();
 
     useMemo(()=>{
-        dispatch(setIsHamburgerClick(false))
+        dispatch(setIsHamburgerClick(false));
     },[]);
 
     return (

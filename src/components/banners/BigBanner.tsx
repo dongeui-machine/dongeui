@@ -41,10 +41,6 @@ export const BigBannerTextBody = styled(BodyTextTypo)`
     white-space: pre-line;
 `
 export const BigBanner = ({ title, body } : BigBannerProps) => {
-    const bigBannerClickHandler = () => {
-        console.log('클릭됨');
-    }
-
     return (
         <BigBannerContainer imgUrl={mainBannerImage}>
             <BigBannerTextContainer>
