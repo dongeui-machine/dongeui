@@ -6,6 +6,17 @@ import { HamburgerProps } from '../../types/HamburgerProps';
 
 const { RegularShadow } = token.global;
 
+export const HamburgerBackdrop = styled.div<{isHamburgerClick:boolean}>`
+    background-color: rgba(0,0,0,0);
+    visibility: ${(props)=>props.isHamburgerClick?'visible':'hidden'};
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+`
+
 export const HamburgerContainer = styled.section<{isHamburgerClick:boolean}>`
     position: absolute;
     top: 65px;
@@ -20,11 +31,13 @@ export const HamburgerContainer = styled.section<{isHamburgerClick:boolean}>`
 `
 export const Hamburger = ({isHamburgerClick}:HamburgerProps) => {
     return (
-        <HamburgerContainer isHamburgerClick={isHamburgerClick}>
-            <NavSubButton to='/intro'>회사소개</NavSubButton>
-            <NavSubButton to='/road'>오시는길</NavSubButton>
-            <NavSubButton to='/products'>제품소개</NavSubButton>
-            <NavSubButton to='/truck'>동의앤피용달</NavSubButton>
-        </HamburgerContainer>
+        <HamburgerBackdrop isHamburgerClick={isHamburgerClick}>
+            <HamburgerContainer isHamburgerClick={isHamburgerClick}>
+                <NavSubButton to='/intro'>회사소개</NavSubButton>
+                <NavSubButton to='/road'>오시는길</NavSubButton>
+                <NavSubButton to='/products'>제품소개</NavSubButton>
+                <NavSubButton to='/truck'>동의앤피용달</NavSubButton>
+            </HamburgerContainer>
+        </HamburgerBackdrop>
     );
 };

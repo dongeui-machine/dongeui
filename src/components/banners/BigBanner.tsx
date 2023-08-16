@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { styled } from 'styled-components';
 import mainBannerImage from '../../assets/images/banner/mainBannerImage.png';
 import { BodyTextTypo, Heading2Typo } from '../../atoms/Typography';
@@ -7,9 +7,13 @@ import mainBannerProduct1 from '../../assets/images/banner/mainBannerProductImg1
 import mainBannerProduct2 from '../../assets/images/banner/mainBannerProductImg2.png';
 import mainBannerProduct3 from '../../assets/images/banner/mainBannerProductImg3.png';
 import { BigBannerProps } from '../../types/BigBannerProps';
-import { useDispatch } from 'react-redux';
-import { setIsHamburgerClick } from '../../redux/actions/isHamburgerClickAction';
 
+export const BigBannerHiddenButton = styled.div`
+    background-color: rgba(0,0,0,0);
+    width: fit-content;
+    height: fit-content;
+
+`
 export const BigBannerContainer = styled.section<{imgUrl: string}>`
     width: 100%;
     background-image: url(${(props)=>props.imgUrl});
@@ -37,6 +41,10 @@ export const BigBannerTextBody = styled(BodyTextTypo)`
     white-space: pre-line;
 `
 export const BigBanner = ({ title, body } : BigBannerProps) => {
+    const bigBannerClickHandler = () => {
+        console.log('클릭됨');
+    }
+
     return (
         <BigBannerContainer imgUrl={mainBannerImage}>
             <BigBannerTextContainer>
