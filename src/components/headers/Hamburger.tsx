@@ -13,7 +13,7 @@ export const HamburgerBackdrop = styled.div<{isHamburgerClick:boolean}>`
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     z-index: 99;
 `
 
