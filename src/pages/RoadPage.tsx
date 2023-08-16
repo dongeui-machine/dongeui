@@ -7,12 +7,22 @@ import { Footer } from '../components/footers/Footer';
 import SideBar from '../components/sidebar/SideBar';
 import { useDispatch } from 'react-redux';
 import { setIsHamburgerClick } from '../redux/actions/isHamburgerClickAction';
-
+import { useSelector } from 'react-redux';
+import { RootState } from '../types/ReducerReturn';
 
 export const RoadPageContainer = styled(MainPageContainer)`
+    width: 100vw;
+`
+export const RoadPageMainContainer = styled.main`
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: start;
 `
 
 const RoadPage = () => {
+    const browserWidth = useSelector((state:RootState)=>state.browserWidthReducer.width);
     const dispatch = useDispatch();
 
     useMemo(()=>{
@@ -23,9 +33,11 @@ const RoadPage = () => {
     return (
         <RoadPageContainer>
             <SmallBanner title='오시는길' imgUrl={`${smallBanner_introduce}`}/>
-            <RoadPageContainer>
-                <SideBar></SideBar>
-            </RoadPageContainer>
+            <RoadPageMainContainer>
+            {
+                    browserWidth>850?<SideBar></SideBar>:null
+            }
+            </RoadPageMainContainer>
             <Footer 
                 companyName='(주) 동의메디칼, 동의기계'
                 ownerName='최정호'
