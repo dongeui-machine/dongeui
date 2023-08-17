@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { setIsHamburgerClick } from '../redux/actions/isHamburgerClickAction';
 import { useSelector } from 'react-redux';
 import { RootState } from '../types/ReducerReturn';
+import IntroRoad from '../components/contents/IntroRoad';
 
 export const RoadPageContainer = styled(MainPageContainer)`
     width: 100vw;
@@ -37,6 +38,7 @@ const RoadPage = () => {
             {
                     browserWidth>850?<SideBar></SideBar>:null
             }
+            <IntroRoad/>
             </RoadPageMainContainer>
             <Footer 
                 companyName='(주) 동의메디칼, 동의기계'
