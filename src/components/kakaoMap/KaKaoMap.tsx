@@ -9,6 +9,7 @@ export const KaKaoMapContainer = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: -1;
 `
 const KaKaoMap = () => {
     return (
