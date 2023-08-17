@@ -6,6 +6,7 @@ import { BodyTextTypo } from '../../atoms/Typography';
 
 export const IntroRoadContainer = styled.section`
     flex-grow: 1;
+    overflow-x: hidden;
 `
 export const IntroRoadHeading = styled(IntroCompanyHeading)`
 `
