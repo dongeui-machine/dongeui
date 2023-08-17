@@ -21,7 +21,8 @@ export const IntroRoadMapContainer = styled.section`
     align-items: center;
 `
 export const IntroRoadInfo = styled(BodyTextTypo)`
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     text-align: start;
 `
 const IntroRoad = () => {

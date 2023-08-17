@@ -3,7 +3,8 @@ import { Map, MapMarker } from 'react-kakao-maps-sdk';
 import { styled } from 'styled-components';
 
 export const KaKaoMapContainer = styled.section`
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
