@@ -15,7 +15,6 @@ export const HamburgerBackdrop = styled.div<{isHamburgerClick:boolean}>`
     width: 100vw;
     height: 90vh;
     z-index: 99;
-    overflow: hidden;
 `
 
 export const HamburgerContainer = styled.section<{isHamburgerClick:boolean}>`

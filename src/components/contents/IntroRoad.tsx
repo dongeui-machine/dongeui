@@ -14,7 +14,7 @@ export const IntroRoadLine = styled(IntroCompanyLine)`
 `
 export const IntroRoadMapContainer = styled.section`
     width: 100%;
-    margin: 24px 24px 24px 24px;
+    margin: 32px 24px 32px 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
