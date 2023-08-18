@@ -31,7 +31,7 @@ const IntroRoad = () => {
             <IntroRoadHeading>오시는길</IntroRoadHeading>
             <IntroRoadLine/>
             <IntroRoadMapContainer>
-                <KaKaoMap/>
+                <KaKaoMap lat={37.521754} lng={126.832335}/>
                 <IntroRoadInfo>주소 : 서울특별시 양천구 지양로9길 12 제일B/D 1층</IntroRoadInfo>
                 <IntroRoadInfo>전화 : 010-5223-1151</IntroRoadInfo>
             </IntroRoadMapContainer>
