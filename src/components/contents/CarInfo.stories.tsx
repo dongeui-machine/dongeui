@@ -6,7 +6,7 @@ export default {
     component: CarInfo
 } as Meta
 
-const Template: Story = (args) => <CarInfo/>
+const Template: Story = () => <CarInfo/>
 
 export const CarInfoTemplate = Template.bind({});
 CarInfoTemplate.args = {

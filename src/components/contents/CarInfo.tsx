@@ -6,12 +6,17 @@ import carBack from '../../assets/images/car/carBack.png'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../types/ReducerReturn';
 
-export const CarInfoContainer = styled.section`
+export const CarInfoContainer = styled.section<{browserWidth:number}>`
     margin: 24px;
+    width: 90vw;
+    max-width: 400px;
+    height: ${(props)=>props.browserWidth>950?'580px':'fit-content'};
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 `
 export const CarInfoHeading = styled(Heading3Typo)`
@@ -47,6 +52,8 @@ export const CarImage = styled.img`
 `
 
 const CarInfo = () => {
+    const browserWidth = useSelector((state:RootState)=>state.browserWidthReducer.width);
+
     const settings = {
         dots: false, //셀의 수만큼 아래에 점이 표시된다
         arrows: false,//좌우 화살표 버튼 없앰
@@ -61,7 +68,7 @@ const CarInfo = () => {
     }
 
     return (
-        <CarInfoContainer>
+        <CarInfoContainer browserWidth={browserWidth}>
             <CarInfoHeading>차량 정보</CarInfoHeading>
             <CarSliderContainer>
                 <Slider {...settings}>
