@@ -19,6 +19,7 @@ export const ImageSliderContainer = styled.div`
     align-items: center;
 `
 export const ImageSliderImg = styled.img`
+    object-fit: contain;
 `
 
 export const ImageSlider = ({ imgUrl1, imgUrl2, imgUrl3 } : SliderProps) => {
