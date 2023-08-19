@@ -3,14 +3,22 @@ import { MainPageContainer } from './MainPage';
 import { SmallBanner } from '../components/banners/SmallBanner';
 import smallBanner_truck from '../assets/images/banner/smallBanner_truck.png'
 import { Footer } from '../components/footers/Footer';
+import CarInfo from '../components/contents/CarInfo';
 
 export const DongeuiEndPPageContainer = styled(MainPageContainer)`
+`
+export const DongeuiEndPPageMainContainer = styled.main`
+    display: flex;
+    flex-direction: row;
 `
 
 const DongeuiEndPPage = () => {
     return (
         <DongeuiEndPPageContainer>
-            <SmallBanner title='동의앤피용달' imgUrl={`${smallBanner_truck}`}/>
+            <SmallBanner title='동의앤피용달' subTitle='가장 편리하고 저렴한 용달 서비스를 이용해보세요.' imgUrl={`${smallBanner_truck}`}/>
+            <DongeuiEndPPageMainContainer>
+                <CarInfo></CarInfo>
+            </DongeuiEndPPageMainContainer>
             <Footer 
                 companyName='(주) 동의메디칼, 동의기계'
                 ownerName='최정호'
