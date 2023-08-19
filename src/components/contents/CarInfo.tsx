@@ -16,7 +16,9 @@ export const CarInfoContainer = styled.section`
 `
 export const CarInfoHeading = styled(Heading3Typo)`
     width: 100%;
+    max-width: 400px;
     margin: 12px 12px 12px 40px;
+    text-align: start;
 `
 export const CarInfoText = styled(BodyTextTypo)`
     width: 400px;
