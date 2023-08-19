@@ -15,18 +15,21 @@ export const CarInfoContainer = styled.section`
     align-items: center;
 `
 export const CarInfoHeading = styled(Heading3Typo)`
-    width: 100%;
+    width: 90vw;
     max-width: 400px;
     margin: 12px 12px 12px 40px;
     text-align: start;
 `
 export const CarInfoText = styled(BodyTextTypo)`
-    width: 400px;
+    width: 90vw;
+    max-width: 400px;
     margin: 4px 4px 0px 40px;
     text-align: start;
 `
+//차량 이미지 슬라이더
 export const CarSliderContainer = styled.section`
-    width: 500px;
+    width: 90vw;
+    max-width: 500px;
     max-height: 800px;
     z-index: -1;
 `
