@@ -1,13 +1,14 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { styled } from 'styled-components';
 import { BigBanner } from '../components/banners/BigBanner';
 import { Footer } from '../components/footers/Footer';
 import { Heading3Typo } from '../atoms/Typography';
-import { itemData } from '../services/getItemData';
+import { getMainPageItemData } from '../services/getItemData';
 import { Item } from '../components/contents/Item';
 import { CommonTextButton } from '../atoms/Buttons';
 import { useDispatch } from 'react-redux';
 import { setIsHamburgerClick } from '../redux/actions/isHamburgerClickAction';
+import { ItemProps } from '../types/ItemProps';
 
 export const MainPageContainer = styled.div`
     width: 100%;
@@ -31,13 +32,20 @@ export const SmallTitle = styled(Heading3Typo)`
 export const ItemsContainer = styled.section`
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 `
+
 export const MainPage = () => {
     const dispatch = useDispatch();
+    const [itemData, setItemData] = useState<ItemProps[]>([]);
 
     useMemo(()=>{
-        dispatch(setIsHamburgerClick(false))
+        dispatch(setIsHamburgerClick(false));
+        getMainPageItemData().then((res)=>{
+            setItemData(res);
+        })
     },[])
 
     const title: string = 'A/S를 최우선으로 하는 동의기계 입니다.';
@@ -48,11 +56,11 @@ export const MainPage = () => {
             <BigBanner title={title} body={body}/>
             <ProductSection>
                 <CommonTextButton to='/products'>
-                <SmallTitle>제품소개</SmallTitle>
+                    <SmallTitle>제품소개</SmallTitle>
                 </CommonTextButton>
                 <ItemsContainer>
                 {
-                    itemData.data.map((e)=><Item id={e.id} name={e.name} imageUrl={e.imageUrl}/>)
+                    itemData.map((e)=><Item id={e.id} name={e.name} imageUrl={e.imageUrl}/>)
                 }
                 </ItemsContainer>
             </ProductSection>

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../types/ReducerReturn';
 import token from '../../tokens/tokens.json'
 
-const { smallText, bodyText } = token.global;
+const { smallText, bodyText, Gray } = token.global;
 
 export const ItemContainer = styled.section<ItemContainerProps>`
     margin: 0px ${(props)=>props.browserWidth>600?'8px':'2px'};
@@ -17,6 +17,10 @@ export const ItemContainer = styled.section<ItemContainerProps>`
     justify-content: start;
     align-items: center;
     cursor: pointer;
+    transition: 300ms;
+    &:hover {
+        color: ${Gray.value}
+    }
 `
 export const ItemImg = styled.img<ItemImgProps>`
     width: ${(props)=>props.browserWidth>600?'220px':'130px'};
@@ -27,6 +31,7 @@ export const ItemImg = styled.img<ItemImgProps>`
 `
 export const ItemNameTypo = styled(BodyTextTypo)<ItemNameTypoProps>`
     font-size: ${(props)=>props.browserWidth>800?`${bodyText.value}px`:`${smallText.value}px`};
+
 `
 
 export const Item = ({id, name, imageUrl}:ItemProps) => {
