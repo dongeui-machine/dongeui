@@ -5,10 +5,11 @@ import { Footer } from '../components/footers/Footer';
 import { Heading3Typo } from '../atoms/Typography';
 import { getMainPageItemData } from '../services/getItemData';
 import { Item } from '../components/contents/Item';
-import { CommonTextButton } from '../atoms/Buttons';
+import { CommonTextButton, MainPageButtonContainer, MainPageButtonIcon, MainPageButtonTitle } from '../atoms/Buttons';
 import { useDispatch } from 'react-redux';
 import { setIsHamburgerClick } from '../redux/actions/isHamburgerClickAction';
 import { ItemProps } from '../types/ItemProps';
+import mapIcon from '../assets/images/icons/mapIcon.svg'
 
 export const MainPageContainer = styled.div`
     width: 100%;
@@ -30,6 +31,15 @@ export const SmallTitle = styled(Heading3Typo)`
     margin: 12px 0px 12px 40px;
 `
 export const ItemsContainer = styled.section`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+`
+export const ButtonSection = styled.section`
+    margin-bottom: 40px;
+    width: 90vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -64,6 +74,12 @@ export const MainPage = () => {
                 }
                 </ItemsContainer>
             </ProductSection>
+            <ButtonSection>
+                <MainPageButtonContainer>
+                    <MainPageButtonIcon src={mapIcon}/>
+                    <MainPageButtonTitle>오시는길</MainPageButtonTitle>
+                </MainPageButtonContainer>
+            </ButtonSection>
             <Footer 
                 companyName='(주) 동의메디칼, 동의기계'
                 ownerName='최정호'

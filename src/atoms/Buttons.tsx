@@ -3,8 +3,9 @@ import { styled } from 'styled-components';
 import callIcon from '../assets/images/icons/callIcon.svg';
 import helpIcon from '../assets/images/icons/helpIcon.svg';
 import { Link } from 'react-router-dom';
+import { BodyTextTypo, Heading3Typo } from './Typography';
 
-const { PlainRadius, White, Black,  Heading2, bodyText, Small, smallText, Gray, DarkGray, LightGray, RegularEverywhereShadow, RegularShadow } = token.global;
+const { PlainRadius, White, Black,  Heading3, bodyText, Small, smallText, Gray, DarkGray, LightGray, RegularEverywhereShadow, RegularShadow } = token.global;
 
 export const NavButton = styled(Link)`
     text-decoration-line : none;
@@ -56,8 +57,7 @@ export const NavSubButton = styled(Link)`
     }
 `
 export const MainPageButtonContainer = styled.button`
-    width: 630px;
-    height: 224px;
+    max-width: 450px;
     border: 0;
     background-color: ${White.value};
     box-shadow: ${
@@ -72,10 +72,25 @@ export const MainPageButtonContainer = styled.button`
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: ${Heading2.value}px;
+    transition: 300ms;
+    &:hover {
+        background-color: ${LightGray.value};
+    }
 `
 export const MainPageButtonIcon = styled.img`
     margin-right: 20px;
+    width: 20%;
+    max-width: 50px;
+`
+export const MainPageButtonTextContainer = styled.section`
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+`
+export const MainPageButtonTitle = styled(Heading3Typo)`
+`
+export const MainPageButtonInfo = styled(BodyTextTypo)`
 `
 export const HelpButton = styled.button`
     width: 388px;
@@ -116,11 +131,13 @@ export const Buttons = ({ text } : ButtonProps) => {
         <NavSubButton to='/'>{ text.navSub }</NavSubButton>
         <HelpButton>
             <HelpButtonIcon src={helpIcon}/>
-            { text.help }
+            <MainPageButtonTextContainer>
+                { text.help }
+            </MainPageButtonTextContainer>
         </HelpButton>
         <MainPageButtonContainer>
             <MainPageButtonIcon src={callIcon}/>
-            { text.mainPage }
+            <MainPageButtonTitle>{ text.mainPage }</MainPageButtonTitle>
         </MainPageButtonContainer>
         <CommonTextButton to='/'>Button</CommonTextButton>
     </div>
