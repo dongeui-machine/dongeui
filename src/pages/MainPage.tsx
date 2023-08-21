@@ -5,11 +5,13 @@ import { Footer } from '../components/footers/Footer';
 import { Heading3Typo } from '../atoms/Typography';
 import { getMainPageItemData } from '../services/getItemData';
 import { Item } from '../components/contents/Item';
-import { CommonTextButton, MainPageButtonContainer, MainPageButtonIcon, MainPageButtonTitle } from '../atoms/Buttons';
+import { CommonTextButton, MainPageButtonContainer, MainPageButtonIcon, MainPageButtonInfo, MainPageButtonTextContainer, MainPageButtonTitle } from '../atoms/Buttons';
 import { useDispatch } from 'react-redux';
 import { setIsHamburgerClick } from '../redux/actions/isHamburgerClickAction';
 import { ItemProps } from '../types/ItemProps';
 import mapIcon from '../assets/images/icons/mapIcon.svg'
+import helpIcon from '../assets/images/icons/helpIcon.svg'
+import { useNavigate } from 'react-router-dom';
 
 export const MainPageContainer = styled.div`
     width: 100%;
@@ -19,7 +21,7 @@ export const MainPageContainer = styled.div`
 `
 export const ProductSection = styled.section`
     width: 100%;
-    margin: 12px 40px 40px 40px;
+    margin: 12px 40px 0px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,17 +40,19 @@ export const ItemsContainer = styled.section`
     flex-wrap: wrap;
 `
 export const ButtonSection = styled.section`
-    margin-bottom: 40px;
-    width: 90vw;
+    margin: 12px 40px 40px 40px;
+    width: 100vw;
+    max-width: 1000px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 `
 
 export const MainPage = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [itemData, setItemData] = useState<ItemProps[]>([]);
 
     useMemo(()=>{
@@ -61,6 +65,9 @@ export const MainPage = () => {
     const title: string = 'A/S를 최우선으로 하는 동의기계 입니다.';
     const body: string = '저희 회사는 최고 품질의 한약 기계를 판매합니다. \n 항상 질 높은 제품과 탁월한 서비스를 제공하여, \n 고객의 신뢰와 만족을 얻을 수 있도록 최선을 다하겠습니다.';
 
+    const roadButtonClickHandler = () => {
+        navigate('/road')
+    }
     return (
         <MainPageContainer>
             <BigBanner title={title} body={body}/>
@@ -75,10 +82,22 @@ export const MainPage = () => {
                 </ItemsContainer>
             </ProductSection>
             <ButtonSection>
-                <MainPageButtonContainer>
+                <MainPageButtonContainer onClick={roadButtonClickHandler}>
                     <MainPageButtonIcon src={mapIcon}/>
+                    <MainPageButtonTextContainer>
                     <MainPageButtonTitle>오시는길</MainPageButtonTitle>
+                    <MainPageButtonInfo>오시는 길을 알려드립니다.</MainPageButtonInfo>
+                    </MainPageButtonTextContainer>
                 </MainPageButtonContainer>
+                <a href='tel:010-5223-1151'>
+                <MainPageButtonContainer>
+                    <MainPageButtonIcon src={helpIcon}/>
+                    <MainPageButtonTextContainer>
+                    <MainPageButtonTitle>구입 및 상담신청</MainPageButtonTitle>
+                    <MainPageButtonInfo>010-5223-1151</MainPageButtonInfo>
+                    </MainPageButtonTextContainer>
+                </MainPageButtonContainer>
+                </a>
             </ButtonSection>
             <Footer 
                 companyName='(주) 동의메디칼, 동의기계'

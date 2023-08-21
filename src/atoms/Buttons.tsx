@@ -5,7 +5,7 @@ import helpIcon from '../assets/images/icons/helpIcon.svg';
 import { Link } from 'react-router-dom';
 import { BodyTextTypo, Heading3Typo } from './Typography';
 
-const { PlainRadius, White, Black,  Heading3, bodyText, Small, smallText, Gray, DarkGray, LightGray, RegularEverywhereShadow, RegularShadow } = token.global;
+const { PlainRadius, White, Black, bodyText, Small, smallText, Gray, DarkGray, LightGray, RegularEverywhereShadow, RegularShadow } = token.global;
 
 export const NavButton = styled(Link)`
     text-decoration-line : none;
@@ -57,11 +57,12 @@ export const NavSubButton = styled(Link)`
     }
 `
 export const MainPageButtonContainer = styled.button`
-    max-width: 450px;
+    margin: 24px;
+    width: 400px;
+    height: 150px;
     border: 0;
     background-color: ${White.value};
-    box-shadow: ${
-        RegularEverywhereShadow.value.x}px 
+    box-shadow: ${RegularEverywhereShadow.value.x}px 
         ${RegularEverywhereShadow.value.y}px 
         ${RegularEverywhereShadow.value.blur}px 
         ${RegularEverywhereShadow.value.spread}px 
@@ -69,7 +70,7 @@ export const MainPageButtonContainer = styled.button`
     border-radius: ${PlainRadius.value}px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     cursor: pointer;
     transition: 300ms;
@@ -78,12 +79,10 @@ export const MainPageButtonContainer = styled.button`
     }
 `
 export const MainPageButtonIcon = styled.img`
-    margin-right: 20px;
     width: 20%;
     max-width: 50px;
 `
 export const MainPageButtonTextContainer = styled.section`
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -91,6 +90,7 @@ export const MainPageButtonTextContainer = styled.section`
 export const MainPageButtonTitle = styled(Heading3Typo)`
 `
 export const MainPageButtonInfo = styled(BodyTextTypo)`
+    color: ${Gray.value};
 `
 export const HelpButton = styled.button`
     width: 388px;
