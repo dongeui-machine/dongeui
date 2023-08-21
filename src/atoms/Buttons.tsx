@@ -31,6 +31,7 @@ export const NavButton = styled(Link)`
         transition: 0s;
     }
 `
+
 export const NavSubButton = styled(Link)`
     text-decoration-line : none;
     text-decoration : none;
@@ -126,20 +127,20 @@ export type ButtonProps = {
 
 export const Buttons = ({ text } : ButtonProps) => {
     return (
-    <div style={ { display: 'grid', gridTemplateColumns: '1fr 1fr', gridAutoRows: '1fr', placeItems: 'center' } }>
-        <NavButton to='/'>{ text.nav }</NavButton>
-        <NavSubButton to='/'>{ text.navSub }</NavSubButton>
-        <HelpButton>
-            <HelpButtonIcon src={helpIcon}/>
-            <MainPageButtonTextContainer>
-                { text.help }
-            </MainPageButtonTextContainer>
-        </HelpButton>
-        <MainPageButtonContainer>
-            <MainPageButtonIcon src={callIcon}/>
-            <MainPageButtonTitle>{ text.mainPage }</MainPageButtonTitle>
-        </MainPageButtonContainer>
-        <CommonTextButton to='/'>Button</CommonTextButton>
-    </div>
+        <div style={ { display: 'grid', gridTemplateColumns: '1fr 1fr', gridAutoRows: '1fr', placeItems: 'center' } }>
+            <NavButton to='/'>{ text.nav }</NavButton>
+            <NavSubButton to='/'>{ text.navSub }</NavSubButton>
+            <HelpButton>
+                <HelpButtonIcon src={helpIcon}/>
+                <MainPageButtonTextContainer>
+                    { text.help }
+                </MainPageButtonTextContainer>
+            </HelpButton>
+            <MainPageButtonContainer>
+                <MainPageButtonIcon src={callIcon}/>
+                <MainPageButtonTitle>{ text.mainPage }</MainPageButtonTitle>
+            </MainPageButtonContainer>
+            <CommonTextButton to='/'>Button</CommonTextButton>
+        </div>
     );
 }

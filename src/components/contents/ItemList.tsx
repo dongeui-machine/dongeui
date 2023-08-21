@@ -6,7 +6,8 @@ import { getAllData } from '../../services/getItemData';
 
 export const ItemListContainer = styled.section`
     margin: 40px;
-    width: 90vw;
+    width: 100vw;
+    max-width: 1100px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
