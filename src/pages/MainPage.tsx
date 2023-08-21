@@ -68,6 +68,11 @@ export const MainPage = () => {
     const roadButtonClickHandler = () => {
         navigate('/road')
     }
+
+    const telButtonClickHandler = () => {
+        window.location.href = 'tel:010-5223-1151';
+    }
+
     return (
         <MainPageContainer>
             <BigBanner title={title} body={body}/>
@@ -89,15 +94,13 @@ export const MainPage = () => {
                     <MainPageButtonInfo>오시는 길을 알려드립니다.</MainPageButtonInfo>
                     </MainPageButtonTextContainer>
                 </MainPageButtonContainer>
-                <a href='tel:010-5223-1151'>
-                <MainPageButtonContainer>
+                <MainPageButtonContainer onClick={telButtonClickHandler}>
                     <MainPageButtonIcon src={helpIcon}/>
                     <MainPageButtonTextContainer>
                     <MainPageButtonTitle>구입 및 상담신청</MainPageButtonTitle>
                     <MainPageButtonInfo>010-5223-1151</MainPageButtonInfo>
                     </MainPageButtonTextContainer>
                 </MainPageButtonContainer>
-                </a>
             </ButtonSection>
             <Footer 
                 companyName='(주) 동의메디칼, 동의기계'
