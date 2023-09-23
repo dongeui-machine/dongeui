@@ -18,6 +18,7 @@ import { HeaderMobile } from './components/headers/HeaderMobile';
 export const ScrollContainer = styled.div`
     width: 100vw;
     flex-grow: 1;
+    overflow-x: hidden;
     overflow-y: auto;
 `
 function App() {
@@ -39,8 +40,8 @@ function App() {
     <div className="App">
       <GlobalStyles/>
       <Router>
+      <ScrollContainer>
         { deviceWidth>850? <Header/>:<HeaderMobile/>}
-        <ScrollContainer>
           <Routes>
             <Route path='/' element={<MainPage/>}/>
             <Route path='/intro' element={<IntroCompanyPage/>}/>

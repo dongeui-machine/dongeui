@@ -8,11 +8,9 @@ export const ItemListContainer = styled.section`
     margin: 40px;
     width: 100vw;
     max-width: 1100px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(24%, auto));
+    gap: 10px;
 `
 
 export const ItemList = () => {

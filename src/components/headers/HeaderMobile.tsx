@@ -14,6 +14,9 @@ export const HeaderContainerMobile = styled(HeaderContainer)`
     justify-content: space-between;
     align-items: center;
 `
+export const HamburgerContainer = styled.div`
+    position: relative;
+`
 export const HamburgerButton = styled.button<{imgUrl:string}>`
     margin: 10px 30px 10px 10px;
     border: 0;
@@ -31,19 +34,19 @@ export const HeaderMobile = () => {
     const isHamburgerClick = useSelector((state:RootState)=>state.isHamburgerClickReducer)
     const dispatch = useDispatch();
 
-    const hamburgerClickListener = () => {
-        dispatch(setIsHamburgerClick(!isHamburgerClick));
-    }
-
     return (
         <HeaderContainerMobile>
             <LogoButton to='/'>
                 <LogoButtonImg src={smallLogo}/>
                 동의기계
             </LogoButton>
-            <HamburgerButton imgUrl={hamburgerIcon} onClick={hamburgerClickListener}>
-                <Hamburger isHamburgerClick={isHamburgerClick}/>
-            </HamburgerButton>
+            <HamburgerContainer>
+                <HamburgerButton
+                    imgUrl={hamburgerIcon} 
+                    onClick={()=>{dispatch(setIsHamburgerClick(!isHamburgerClick));}} 
+                    onBlur={()=>{ dispatch(setIsHamburgerClick(false)); }}/>
+                <Hamburger/>
+            </HamburgerContainer>
         </HeaderContainerMobile>
     );
 };

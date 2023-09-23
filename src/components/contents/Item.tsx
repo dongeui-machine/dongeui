@@ -12,6 +12,7 @@ export const ItemContainer = styled.section<ItemContainerProps>`
     margin: 0px ${(props)=>props.browserWidth>600?'8px':'2px'};
     width: ${(props)=>props.browserWidth>600?'250px':'180px'};
     height: ${(props)=>props.browserWidth>600?'300px':'230px'};
+    justify-self: center;
     display: flex;
     flex-direction: column;
     justify-content: start;
