@@ -33,11 +33,12 @@ export const SmallTitle = styled(Heading3Typo)`
     margin: 12px 0px 12px 40px;
 `
 export const ItemsContainer = styled.section`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1100px;
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(24%, auto));
+    gap: 10px;
 `
 export const ButtonSection = styled.section`
     margin: 12px 40px 40px 40px;
@@ -58,7 +59,7 @@ export const MainPage = () => {
     useMemo(()=>{
         dispatch(setIsHamburgerClick(false));
         getMainPageItemData().then((res)=>{
-            setItemData(res);
+            setItemData(res.data);
         })
     },[])
 

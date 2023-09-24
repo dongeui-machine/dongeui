@@ -5,7 +5,7 @@ import helpIcon from '../assets/images/icons/helpIcon.svg';
 import { Link } from 'react-router-dom';
 import { BodyTextTypo, Heading3Typo } from './Typography';
 
-const { PlainRadius, White, Black, bodyText, Small, smallText, Gray, DarkGray, LightGray, RegularEverywhereShadow, RegularShadow } = token.global;
+const { PlainRadius, White, Black, Primary, Danger, bodyText, Small, smallText, Gray, DarkGray, LightGray, RegularEverywhereShadow, RegularShadow } = token.global;
 
 export const NavButton = styled(Link)`
     text-decoration-line : none;
@@ -119,6 +119,18 @@ export const CommonTextButton = styled(Link)`
     transition: 300ms;
     &:hover {
         color: ${Gray.value};
+    }
+`
+export const NegativeTextButton = styled.button`
+    color: ${Danger.value};
+    font-size: ${bodyText.value}px;
+`
+export const PositiveTextButton = styled.button`
+    color: ${Primary.value};
+    font-size: ${bodyText.value}px;
+    transition: 300ms;
+    &:hover {
+        opacity: 0.5;
     }
 `
 export type ButtonProps = {

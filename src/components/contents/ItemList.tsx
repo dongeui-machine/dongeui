@@ -5,7 +5,7 @@ import { Item } from './Item';
 import { getAllData } from '../../services/getItemData';
 
 export const ItemListContainer = styled.section`
-    margin: 40px;
+    padding: 40px;
     width: 100vw;
     max-width: 1100px;
     display: grid;
@@ -18,7 +18,7 @@ export const ItemList = () => {
 
     useMemo(()=>{
         getAllData().then((res)=>{
-            setItemData(res);
+            setItemData(res.data);
         })
     },[]);
 

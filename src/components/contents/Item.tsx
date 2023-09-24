@@ -5,13 +5,13 @@ import { BodyTextTypo } from '../../atoms/Typography';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../types/ReducerReturn';
 import token from '../../tokens/tokens.json'
+import { useNavigate } from 'react-router-dom';
 
 const { smallText, bodyText, Gray } = token.global;
 
 export const ItemContainer = styled.section<ItemContainerProps>`
-    margin: 0px ${(props)=>props.browserWidth>600?'8px':'2px'};
-    width: ${(props)=>props.browserWidth>600?'250px':'180px'};
-    height: ${(props)=>props.browserWidth>600?'300px':'230px'};
+    width: ${(props)=>props.browserWidth>600?'240px':'180px'};
+    max-width: 100%;
     justify-self: center;
     display: flex;
     flex-direction: column;
@@ -24,22 +24,22 @@ export const ItemContainer = styled.section<ItemContainerProps>`
     }
 `
 export const ItemImg = styled.img<ItemImgProps>`
-    width: ${(props)=>props.browserWidth>600?'220px':'130px'};
-    height: ${(props)=>props.browserWidth>600?'220px':'130px'};
-    object-fit:contain;
+    width: 100%;
+    height: ${(props)=>props.browserWidth>600?'210px':'120px'};
+    object-fit: contain;
     border-radius: 8px;
     border: 2px solid rgba(0,0,0,0.1);
 `
 export const ItemNameTypo = styled(BodyTextTypo)<ItemNameTypoProps>`
     font-size: ${(props)=>props.browserWidth>800?`${bodyText.value}px`:`${smallText.value}px`};
-
+    width: 100%;
 `
-
 export const Item = ({id, name, imageUrl}:ItemProps) => {
+    const navigate = useNavigate();
     const deviceWidth = useSelector((state:RootState)=>state.browserWidthReducer.width);
 
     const itemClickHandler = (e:React.MouseEvent<HTMLElement>) => {
-
+        navigate(`${id}`);
     }
 
     return (

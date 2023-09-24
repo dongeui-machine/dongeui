@@ -14,6 +14,7 @@ import { readBrowserWidth } from './redux/actions/browserWidthAction';
 import { useSelector } from 'react-redux';
 import { RootState } from './types/ReducerReturn';
 import { HeaderMobile } from './components/headers/HeaderMobile';
+import ProductDetailPage from './pages/ProductDetailPage';
 
 export const ScrollContainer = styled.div`
     width: 100vw;
@@ -47,6 +48,7 @@ function App() {
             <Route path='/intro' element={<IntroCompanyPage/>}/>
             <Route path='/road' element={<RoadPage/>}/>
             <Route path='/products' element={<ProductPage/>}/>
+            <Route path='/products/:id' element={<ProductDetailPage/>}/>
             <Route path='/truck' element={<DongeuiEndPPage/>}/>
           </Routes>
         </ScrollContainer>
