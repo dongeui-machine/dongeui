@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { styled } from 'styled-components';
 import { BigBanner } from '../components/banners/BigBanner';
 import { Footer } from '../components/footers/Footer';
@@ -55,6 +55,12 @@ export const MainPage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [itemData, setItemData] = useState<ItemProps[]>([]);
+
+    useEffect(()=>{
+        window.scrollTo({
+            top: 0,
+          });
+    })
 
     useMemo(()=>{
         dispatch(setIsHamburgerClick(false));

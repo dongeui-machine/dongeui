@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { styled } from 'styled-components';
 import { NavSubButton } from '../../atoms/Buttons';
 import token from '../../tokens/tokens.json';
@@ -23,6 +23,7 @@ export const HamburgerContainer = styled.section<{isHamburgerClick:boolean}>`
 export const Hamburger = () => {
     const isHamburgerClick = useSelector((state:RootState)=>state.isHamburgerClickReducer);
     
+
     return (
         <HamburgerContainer isHamburgerClick={isHamburgerClick}>
             <NavSubButton to='/intro'>회사소개</NavSubButton>

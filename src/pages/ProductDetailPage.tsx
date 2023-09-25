@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DongeuiMedicalPageContainer } from './ProductPage';
 import { SmallBanner } from '../components/banners/SmallBanner';
 import smallBanner_medical from '../assets/images/banner/smallBanner_medical.png'
@@ -8,6 +8,13 @@ import { useParams } from 'react-router-dom';
 
 const ProductDetailPage = () => {
     const { id } = useParams();
+
+    useEffect(()=>{
+        window.scrollTo({
+            top: 0,
+          });
+    })
+
 
     return (
         <DongeuiMedicalPageContainer>

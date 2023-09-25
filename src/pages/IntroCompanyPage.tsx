@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { MainPageContainer } from './MainPage';
 import { styled } from 'styled-components';
 import { SmallBanner } from '../components/banners/SmallBanner';

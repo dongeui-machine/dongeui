@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import GlobalStyles from './tokens/GlobalStyled';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/headers/Header';
 import MainPage from './pages/MainPage';
-import { styled } from 'styled-components';
 import IntroCompanyPage from './pages/IntroCompanyPage';
 import ProductPage from './pages/ProductPage';
 import DongeuiEndPPage from './pages/DongeuiEndPPage';
@@ -16,12 +14,6 @@ import { RootState } from './types/ReducerReturn';
 import { HeaderMobile } from './components/headers/HeaderMobile';
 import ProductDetailPage from './pages/ProductDetailPage';
 
-export const ScrollContainer = styled.div`
-    width: 100vw;
-    flex-grow: 1;
-    overflow-x: hidden;
-    overflow-y: auto;
-`
 function App() {
   const dispatch = useDispatch();
   const deviceWidth = useSelector((state:RootState)=>state.browserWidthReducer.width);
@@ -38,10 +30,7 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <GlobalStyles/>
-      <Router>
-      <ScrollContainer>
+    <>
         { deviceWidth>850? <Header/>:<HeaderMobile/>}
           <Routes>
             <Route path='/' element={<MainPage/>}/>
@@ -51,9 +40,7 @@ function App() {
             <Route path='/products/:id' element={<ProductDetailPage/>}/>
             <Route path='/truck' element={<DongeuiEndPPage/>}/>
           </Routes>
-        </ScrollContainer>
-      </Router>
-    </div>
+      </>
   );
 }
 

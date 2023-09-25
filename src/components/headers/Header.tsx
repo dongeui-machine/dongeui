@@ -47,8 +47,6 @@ export const LogoNavButtonContainer = styled.div`
 `
 
 export const Header = () => {
-    
-
     return (
         <HeaderContainer>
             <LogoButton to='/'>

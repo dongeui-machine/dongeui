@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { styled } from 'styled-components';
 import { MainPageContainer } from './MainPage';
 import { SmallBanner } from '../components/banners/SmallBanner';
@@ -25,6 +25,12 @@ export const RoadPageMainContainer = styled.main`
 const RoadPage = () => {
     const browserWidth = useSelector((state:RootState)=>state.browserWidthReducer.width);
     const dispatch = useDispatch();
+
+    useEffect(()=>{
+        window.scrollTo({
+            top: 0,
+          });
+    })
 
     useMemo(()=>{
         dispatch(setIsHamburgerClick(false))

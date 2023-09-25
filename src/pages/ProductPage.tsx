@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { MainPageContainer } from './MainPage';
 import { styled } from 'styled-components';
 import { SmallBanner } from '../components/banners/SmallBanner';
 import smallBanner_medical from '../assets/images/banner/smallBanner_medical.png'
 import { Footer } from '../components/footers/Footer';
 import ItemList from '../components/contents/ItemList';
+import { useDispatch } from 'react-redux';
+import { setIsHamburgerClick } from '../redux/actions/isHamburgerClickAction';
 
 export const DongeuiMedicalPageContainer = styled(MainPageContainer)`
 
 `
 
 const ProductPage = () => {
+    const dispatch = useDispatch();
+
+    useMemo(()=>{
+        dispatch(setIsHamburgerClick(false));
+    },[])
+
     return (
         <DongeuiMedicalPageContainer>
             <SmallBanner title='제품소개' imgUrl={`${smallBanner_medical}`}/>

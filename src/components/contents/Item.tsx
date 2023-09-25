@@ -39,7 +39,7 @@ export const Item = ({id, name, imageUrl}:ItemProps) => {
     const deviceWidth = useSelector((state:RootState)=>state.browserWidthReducer.width);
 
     const itemClickHandler = (e:React.MouseEvent<HTMLElement>) => {
-        navigate(`${id}`);
+        navigate(`/products/${id}`);
     }
 
     return (

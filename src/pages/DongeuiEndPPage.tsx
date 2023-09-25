@@ -5,6 +5,9 @@ import smallBanner_truck from '../assets/images/banner/smallBanner_truck.png'
 import { Footer } from '../components/footers/Footer';
 import CarInfo from '../components/contents/CarInfo';
 import CarCallInfo from '../components/contents/CarCallInfo';
+import { useEffect, useMemo, useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { setIsHamburgerClick } from '../redux/actions/isHamburgerClickAction';
 
 export const DongeuiEndPPageContainer = styled(MainPageContainer)`
 `
@@ -17,6 +20,12 @@ export const DongeuiEndPPageMainContainer = styled.main`
 `
 
 const DongeuiEndPPage = () => {
+    const dispatch = useDispatch();
+    
+    useMemo(()=>{
+        dispatch(setIsHamburgerClick(false));
+    },[]);
+
     return (
         <DongeuiEndPPageContainer>
             <SmallBanner title='동의앤피용달' subTitle='가장 편리하고 저렴한 용달 서비스를 이용해보세요.' imgUrl={`${smallBanner_truck}`}/>
