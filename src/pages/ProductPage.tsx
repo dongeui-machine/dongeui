@@ -17,7 +17,7 @@ const ProductPage = () => {
 
     useMemo(()=>{
         dispatch(setIsHamburgerClick(false));
-    },[])
+    },[]);
 
     return (
         <DongeuiMedicalPageContainer>

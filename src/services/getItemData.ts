@@ -1,4 +1,8 @@
 // 브랜드 : 경서이엔피, 유성파우치
+
+import axios from "axios";
+import { ROOT_URL } from ".";
+
 /*
 카테고리
 1. 경서이엔피 : 추출기, 포장기, 분쇄기/착즙기/교반탱크
@@ -121,16 +125,35 @@ export const getMainPageItemData = async () => {
 }
 //제품페이지 제품 목록 조회
 export const getAllData = async () => {
-    return {
-        status: 'success',
-        data : itemData.data
-    };
+    try {
+        const response = await axios.get(`${ROOT_URL}/products`);
+
+        return {
+            status: 'success',
+            data : response.data.data,
+        };
+    } catch (err) {
+        return {
+            status: 'error',
+            data : err,
+        };
+    }
+
 }
 //제품 상세데이터 조회
 export const getItemDetailData = async (productId:number) => {
-    return {
-        status: 'success',
-        data: itemData.data.filter(e=>e.id===productId)[0]
-    };
+    try {
+        const response = await axios.get(`${ROOT_URL}/products/${productId}`);
+        console.log(response.data.data)
+        return {
+            status : 'success',
+            data : response.data.data,
+        }
+    } catch (err) {
+        return {
+            status : 'error',
+            data : err
+        }
+    }
 }
 
