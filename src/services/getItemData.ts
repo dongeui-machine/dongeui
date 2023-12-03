@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import { ROOT_URL } from ".";
+import { productType } from "../types/ProductType";
 
 /*
 카테고리
@@ -151,34 +152,12 @@ export const getMainPageItemData = async () => {
 };
 //제품페이지 제품 목록 조회
 export const getAllData = async () => {
-  // try {
-  //     const response = await axios.get(`${ROOT_URL}/products`);
-
-  //     return {
-  //         status: 'success',
-  //         data : response.data.data,
-  //     };
-  // } catch (err) {
-  //     return {
-  //         status: 'error',
-  //         data : err,
-  //     };
-  // }
   return itemData;
 };
 //제품 상세데이터 조회
 export const getItemDetailData = async (productId: number) => {
-  try {
-    const response = await axios.get(`${ROOT_URL}/products/${productId}`);
-    console.log(response.data.data);
-    return {
-      status: "success",
-      data: response.data.data,
-    };
-  } catch (err) {
-    return {
-      status: "error",
-      data: err,
-    };
-  }
+  return {
+    status: "success",
+    data: itemData.data.filter((e: productType) => e.id === productId)[0],
+  };
 };
